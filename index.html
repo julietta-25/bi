@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Наша Свадьба П&Д</title>
+        <link rel="stylesheet" href="CSS/prig.css">
+        <link rel="stylesheet" href="CSS/reboot.css">
+        </head>
+    <body>
+        <div class="conteiner">
+            <p class="Our-wedding"><b>Наша Свадьба</b></p>
+            <p class="dat"><i>22/08/2025</i></p>
+            <img class="kalendar" src="img/cal2.png" alt="Каленьдарь с нашей датой">
+            <a href="anket.html">
+            <button class="quest"><b>Готов прийти!</b></button>
+            </a>
+            <div class="bor-descrip">
+                <p class="description">
+                    <i>22 августа</i> — это день, когда мы приняли решение сделать наш союз официальным. Эта дата не имеет особого значения, 
+                    просто она отзывается в наших сердцах как правильная. Однако после она навсегда станет символом нашего союза. 
+                    Мы не стремимся к пышному торжеству, хотя для нас даже этот праздник кажется огромным. 
+                <i>Наша свадьба</i> — это тёплая и душевная встреча самых близких людей, 
+                    где главное — наша любовь и радость от совместного момента.
+                </p>
+            </div>
+            <p class="vrem">Время до заветного дня:</p>
+            <div id="countdown">
+                <div class="countdown-card">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">дн.</span>
+                 </div>
+                 <p><i>|</i></p>
+                 <div class="countdown-card">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">ч.</span>
+                 </div>
+                 <p><i>|</i></p>
+                 <div class="countdown-card">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">мин.</span>
+                 </div>
+                 <p><i>|</i></p>
+                 <div class="countdown-card">
+                     <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">сек.</span>
+                 </div>
+            </div>
+
+            <img src="img/бакалы.png" alt="Бакалы" class="bokal">
+            <img src="img/prog.png" alt="Программа дня" class="program">
+            <div class="adres-d">
+                <p class="adres">
+                    Ждем вас по адресу:
+                    <br> город Тула, Советская ул., 47
+                </p>
+            </div>
+            <p class="vr-vstrechi"><i class="num">15:30</i> сбор гостей</p>
+            <hr class="line">
+            <p class="vr-vstrechi"><i class="num">16:00</i> церемония</p>
+            <hr class="line">
+            <p class="vr-vstrechi"><i class="num">17:30</i> начало банкета</p>
+            <hr class="line">
+
+            <div class="wishes">
+                <div class="kart-wish">
+                    <img src="img/love_4.png" alt="Cердце в облаках" class="head">
+                    <img src="img/pozel.png" alt="Наши пожелания" class="pozel">
+                    <p class="pogel">
+                        Наши самые близкие! В этот день, когда наши сердца соединятся, 
+                        мы будем рады видеть вас рядом, чтобы разделить с вами нашу любовь и счастье. 
+                        Пусть этот день станет началом нашей общей сказки.</p>
+                </div>
+            </div>
+
+            <img src="img/diamond.png" alt="Алмаз" class="diamond">
+            <img src="img/vopros.png" alt="Обратная связь" class="obrat-сvaz">
+            <p class="obrat-text">
+                Если у вас есть вопросы о программе, дресс-коде, 
+                <br>месте проведения или любых других деталях, 
+                <br>не стесняйтесь к нам обращаться.
+            </p>
+
+            <div class="icon-cont">
+                <a href="https://wa.me/qr/EKBTRZYH4IOFK1">
+                    <button class="whatsapp">
+                        <img src="img/whatsApp.png" alt="WhatsApp" class="whats-img">
+                    </button>
+                </a>
+
+                <a href="https://t.me/prie_s_t">
+                    <button class="telegram">
+                        <img src="img/telegramm.png" alt="Telegram" class="teleg-img">
+                    </button>
+                </a>
+            </div>
+
+        </div>
+
+        <script>
+           function updateCountdown() {
+                const targetDate = new Date('August 22, 2025 12:30:00').getTime();
+                const now = new Date().getTime();
+                const timeLeft = targetDate - now;
+
+                if (timeLeft < 0) {
+                    document.getElementById('countdown').innerHTML = "Свадьба уже прошла!";
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerHTML = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerHTML = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+            }
+
+            setInterval(updateCountdown, 1000);
+        </script>
+
+    </body>
+</html>
